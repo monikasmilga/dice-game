@@ -2,27 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dice game</title>
+    <title>Practice</title>
 </head>
 <body>
 
-Click roll to throw dice
+<p id="pink"> Hello pink </p>
+<button onclick="document.getElementById('pink').style.color='pink'">Color me!</button>
 
-<button id="button">Roll</button>
-<div></div>
+<p id="lightblue"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
+<button onclick="colorButton()">Color me!</button>
+
+<p id="connect">Oras</p>
+<!--<button onclick="alert(connectText, connectText())">Connect me!</button>-->
+<div>
+    <button onclick="connectText(alert(connectText))">Connect me!</button>
+</div>
+<br>
+<div>
+    <button onclick="alert(connectText.length)">Show arguments!</button>
+</div>
+<br>
+
+<div>
+    <button onclick="alert(countArguments(4,4,12))">Count arguments!</button>
+</div>
+<br>
+<div>
+    <button onclick="alert(findLargestArgument(110,27,13))">Find largerst!</button>
+</div>
 
 <script>
+    function colorButton() {
+        var color = document.getElementById('lightblue').style.color;
 
-    document.querySelector('#button').addEventListener('click', rollDice);
-    function rollDice() {
-//        alert('Roll!')
-
-        var result = Math.ceil(Math.random()*6);
-        document.querySelector('div')
-            .appendChild(document.createTextNode(result));
-
-
+        if (color == "lightblue") {
+            color = document.getElementById('lightblue').style.color = "black"
+        }
+        else {
+            color = document.getElementById('lightblue').style.color = "lightblue"
+        }
     }
+
+    var a = "Baisus",
+        b = "lietus",
+        c = " ";
+
+
+    function connectText(a, b, c) {
+
+        return document.getElementById('connect').innerHTML = a.concat(c, b, c, a.toLowerCase(), c, a.toLowerCase());
+    }
+
+    function countArguments(z, x, v) {
+        var sum = 0;
+        for (var i = 0; i < arguments.length; i++) {
+            sum += arguments[i];
+        }
+        return sum;
+    }
+
+    function findLargestArgument(e, r, t) {
+        for (var i = 0; i < arguments.length; i++) {
+        }
+
+        var largestArgument = Math.max.apply(Math, arguments);
+        return largestArgument;
+    }
+
+
 </script>
 </body>
 </html>
