@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time practice</title>
+</head>
+<body>
+
+<button onclick="showDay()">Show day below</button>
+
+<p id="result3">Day</p>
+
+<button onclick="getStartTime()" style="background-color: lawngreen">START</button>
+<button onclick="getStopTime()" style="background-color: orangered">STOP</button>
+
+<p id="result4">Miliseconds</p>
+
+<p>Push the first button to turn the yellow button grey</p>
+<button onclick="setTimeout(function(){deactivateButton()}, 3000)">Begin 5 seconds</button>
+<button id='result5' style="background-color:yellow">Push me!</button>
+
+
+<p>This button will change color after 5 seconds</p>
+<button id='result6' style="background-color:yellow">I will change color</button>
+
+<script>
+
+    // function that returns the name of the weekday
+
+    function showDay() {
+        var today = new Date();
+        var weekday = new Array(7);
+        weekday[0] = "Sunday";
+        weekday[1] = "Monday";
+        weekday[2] = "Tuesday";
+        weekday[3] = "Wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+
+        var dayName = weekday[today.getUTCDay()];
+        return document.getElementById("result3").innerHTML = dayName;
+    }
+
+    // function that counts time between clicks of start/stop buttons
+
+    var startTime;
+
+    function getStartTime() {
+        var now1 = new Date();
+        startTime = now1.getTime();
+        return document.getElementById("result4").innerHTML = "Counting... Push STOP to see the result";
+    }
+
+    function getStopTime() {
+        var now2 = new Date();
+        var stopTime = now2.getTime();
+        return document.getElementById("result4").innerHTML = ((stopTime - startTime) / 1000 + " seconds");
+    }
+
+    // function that changes button's appearance after 5 seconds
+
+    function deactivateButton() {
+        document.getElementById("result5").innerHTML = "Too late!";
+        document.getElementById('result5').style.backgroundColor='grey';
+    }
+
+    // function that will change button color after 5 seconds from page load
+
+    function changeColor() {
+        document.getElementById('result6').style.backgroundColor='lightblue';
+        document.getElementById("result6").innerHTML = "Told yaaaa!";
+    }
+
+    var fn = function(){changeColor()};
+    window.onload = function() { setInterval(fn,3000)};
+
+</script>
+</body>
+</html>
