@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice</title>
+</head>
+<body>
+
+<p id="result1"> Type </p>
+
+<button onclick="getType()">Show object member types</button>
+
+<p id="result2">Object member types</p>
+
+<script>
+
+    var variable1 = 6,
+        variable2 = "labas",
+        variable3 = true,
+        variable4 = 3.14,
+
+        variable5 = {
+            size: [10, 20, 15],
+            weight: 500,
+            active: false,
+            color: "black"
+        }
+    ;
+
+    //    code shows variable types
+
+    document.getElementById('result1').innerHTML = typeof variable2 + " " + typeof variable1 + " " + typeof variable3 + " " + typeof variable4;
+
+    // function shows object member types
+
+    function getType() {
+        Object.keys(variable5).forEach(function (key) {
+
+            var node = document.createElement("p");
+            var textnode = document.createTextNode(key + " " + typeof variable5[key]);
+            node.appendChild(textnode);
+            document.getElementById("result2").appendChild(node)
+        });
+    }
+
+
+</script>
+</body>
+</html>
