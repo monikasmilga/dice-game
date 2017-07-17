@@ -29,10 +29,16 @@
 
 <script>
 
-    // choose a brand through dropdown, return value in another field
+    // choose a brand through dropdown, return value in another field. Edit value to first letter upper case, with exception for BMW
     function selectItem() {
         var x = document.getElementById("choose").value;
-        document.getElementById("answer").innerHTML = "You chose: " + x.toUpperCase();
+
+        if (x == "bmw") {
+            var name = x.toUpperCase();
+        } else {
+            var name = x.substring(0, 1).toUpperCase() + x.slice(1, 99);
+        }
+        document.getElementById("answer").innerHTML = "You chose: " + name;
     }
 
     // 1. count symbols of the text given
@@ -54,20 +60,20 @@
 
     function countEachCharacter(text) {
 
-    var hello = "As of 2017, text messages are used by youth and adults for personal, family and social purposes and in " +
-    "business, government and non-governmental organizations for communication between colleagues. As with emailing," +
-    " in the 2010s, the sending of short informal messages has become an accepted part of many cultures. This makes" +
-    " texting a quick and easy way to communicate with friends and colleagues, including in contexts where a phone" +
-    " call would be impolite or inappropriate (e.g., calling very late at night or when one knows the other person" +
-    " is busy with family or work activities).";
-    var histogram = {};
+        var hello = "As of 2017, text messages are used by youth and adults for personal, family and social purposes and in " +
+            "business, government and non-governmental organizations for communication between colleagues. As with emailing," +
+            " in the 2010s, the sending of short informal messages has become an accepted part of many cultures. This makes" +
+            " texting a quick and easy way to communicate with friends and colleagues, including in contexts where a phone" +
+            " call would be impolite or inappropriate (e.g., calling very late at night or when one knows the other person" +
+            " is busy with family or work activities).";
+        var histogram = {};
 
-    for (var i = 0, len = hello.length; i < len; i++) {
-        var letter = hello[i];
-        histogram[letter] = (histogram[letter] || 0) + 1;
-    }
+        for (var i = 0, len = hello.length; i < len; i++) {
+            var letter = hello[i];
+            histogram[letter] = (histogram[letter] || 0) + 1;
+        }
 
-    console.log(histogram);
+        console.log(histogram);
     }
 
 </script>

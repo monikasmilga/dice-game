@@ -6,18 +6,26 @@
 </head>
 <body>
 
+<button onclick="document.getElementById('sliced').innerHTML=best">Get color array sliced</button>
+<p id="sliced">...</p>
 
+<button onclick="document.getElementById('substringed').innerHTML=result">Get color array sliced</button>
+<p id="substringed">...</p>
 
-
+<hr>
 
 </body>
 
 
 <script>
+
+    // function that slices from one number to other number
     var arrColor = ["blue", "green", "yellow", "red", "pink", "orange"];
     var best = arrColor.slice(3, 6);
 
-    console.log(best);
+    // substring
+    var string ="pasiskiskiakopusteliaudavome"
+    var result = string.substring(1,6)
 
 
 </script>
