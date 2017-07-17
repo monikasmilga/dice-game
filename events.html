@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+</head>
+<body>
+
+<div id="pink" onclick="colorPink()" style="height: 150px; width: 150px; margin: 10px; background-color: grey">On
+    click
+</div>
+
+<div id="green" oncontextmenu="colorBlue()" style="height: 150px; width: 150px; margin: 10px; background-color: grey">On
+    context menu
+</div>
+
+<div id="blue" ondblclick="colorGreen()" style="height: 150px; width: 150px; margin: 10px; background-color: grey">On
+    double click
+</div>
+
+<button onmousedown="sayHello()">On mouse down</button>
+
+<p id="first">...</p>
+
+<button onmouseenter="saySeeYa()">On mouse enter</button>
+
+<p id="second">...</p>
+
+<button onmouseleave="SayHowRU()">On mouse leave</button>
+
+<p id="third">...</p>
+
+<button onmousemove="SayHaveANice()">On mouse move</button>
+
+<p id="fourth">...</p>
+
+
+<script>
+
+    // using events onclick, oncontextmenu, ondblclick to change div color
+
+    function colorPink() {
+        document.getElementById("pink").style.backgroundColor = "pink";
+    }
+
+    function colorBlue() {
+        document.getElementById("green").style.backgroundColor = "lightblue";
+    }
+
+    function colorGreen() {
+        document.getElementById("blue").style.backgroundColor = "lightgreen";
+    }
+
+    //
+
+    function sayHello() {
+        document.getElementById("first").innerHTML = "Hello World!";
+    }
+
+    function saySeeYa() {
+        document.getElementById("second").innerHTML = "See you soon!";
+    }
+
+    function SayHowRU() {
+        document.getElementById("third").innerHTML = "How are you?";
+    }
+
+    function SayHaveANice() {
+        document.getElementById("fourth").innerHTML = "Have a nice day!";
+    }
+
+
+</script>
+
+</body>
+</html>
