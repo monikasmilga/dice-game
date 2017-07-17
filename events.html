@@ -6,6 +6,8 @@
 </head>
 <body>
 
+<!-- 1. first task-->
+
 <div id="pink" onclick="colorPink()" style="height: 150px; width: 150px; margin: 10px; background-color: grey">On
     click
 </div>
@@ -19,6 +21,8 @@
 </div>
 
 <button onmousedown="sayHello()">On mouse down</button>
+
+<!-- 2. second task-->
 
 <p id="first">...</p>
 
@@ -34,10 +38,23 @@
 
 <p id="fourth">...</p>
 
+<!-- 3. third task-->
+
+<button onmouseup="sayMouseUp()">Unlock me</button>
+
+<p id="aaa">...</p>
+
+<button onmouseout="sayMouseOut()">Unlock me</button>
+
+<p id="bbb">...</p>
+
+<button onmouseover="sayMouseOver()">Unlock me</button>
+
+<p id="ccc">...</p>
 
 <script>
 
-    // using events onclick, oncontextmenu, ondblclick to change div color
+    // 1. using events onclick, oncontextmenu, ondblclick to change div color
 
     function colorPink() {
         document.getElementById("pink").style.backgroundColor = "pink";
@@ -51,7 +68,7 @@
         document.getElementById("blue").style.backgroundColor = "lightgreen";
     }
 
-    //
+    // 2. using events onmousedown, onmouseenter, onmouseleave, onmousemove to make text appear
 
     function sayHello() {
         document.getElementById("first").innerHTML = "Hello World!";
@@ -67,6 +84,20 @@
 
     function SayHaveANice() {
         document.getElementById("fourth").innerHTML = "Have a nice day!";
+    }
+
+    // 3. using events onmouseup, onmouseout, onmouseover to make text appear
+
+    function sayMouseUp() {
+        document.getElementById("aaa").innerHTML = "You used mouse up";
+    }
+
+    function sayMouseOut() {
+        document.getElementById("bbb").innerHTML = "You used mouse out";
+    }
+
+    function sayMouseOver() {
+        document.getElementById("ccc").innerHTML = "You used mouse over";
     }
 
 
