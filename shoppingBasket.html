@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping basket</title>
+</head>
+<body>
+
+<p>Choose a brand</p>
+
+<select id="choose" onchange="selectItem()">
+    <option value="audi">Audi</option>
+    <option value="bmw">BMW</option>
+    <option value="honda">Honda</option>
+</select>
+
+<p id="answer"></p>
+
+<p id="text1">As of 2017, text messages are used by youth and adults for personal, family and social purposes and in
+    business, government and non-governmental organizations for communication between colleagues. As with emailing, in
+    the 2010s, the sending of short informal messages has become an accepted part of many cultures. This makes texting
+    a quick and easy way to communicate with friends and colleagues, including in contexts where a phone call would be
+    impolite or inappropriate (e.g., calling very late at night or when one knows the other person is busy with family
+    or work activities).</p>
+
+<p id="result" style="color: forestgreen" onclick="countSymbols()">Click me to count symbols</p>
+
+<button onclick="countEachCharacter(text)">Count each text character</button>
+
+<script>
+
+    // choose a brand through dropdown, return value in another field
+    function selectItem() {
+        var x = document.getElementById("choose").value;
+        document.getElementById("answer").innerHTML = "You chose: " + x.toUpperCase();
+    }
+
+    // 1. count symbols of the text given
+
+    //        var text = document.getElementById("text1").innerHTML;
+
+    var text = "As of 2017, text messages are used by youth and adults for personal, family and social purposes and in " +
+        "business, government and non-governmental organizations for communication between colleagues. As with emailing," +
+        " in the 2010s, the sending of short informal messages has become an accepted part of many cultures. This makes" +
+        " texting a quick and easy way to communicate with friends and colleagues, including in contexts where a phone" +
+        " call would be impolite or inappropriate (e.g., calling very late at night or when one knows the other person" +
+        " is busy with family or work activities).";
+
+    function countSymbols() {
+        document.getElementById("result").innerHTML = text.length;
+    }
+
+    // 2. count each symbol separately (shows result in console.log)
+
+    function countEachCharacter(text) {
+
+    var hello = "As of 2017, text messages are used by youth and adults for personal, family and social purposes and in " +
+    "business, government and non-governmental organizations for communication between colleagues. As with emailing," +
+    " in the 2010s, the sending of short informal messages has become an accepted part of many cultures. This makes" +
+    " texting a quick and easy way to communicate with friends and colleagues, including in contexts where a phone" +
+    " call would be impolite or inappropriate (e.g., calling very late at night or when one knows the other person" +
+    " is busy with family or work activities).";
+    var histogram = {};
+
+    for (var i = 0, len = hello.length; i < len; i++) {
+        var letter = hello[i];
+        histogram[letter] = (histogram[letter] || 0) + 1;
+    }
+
+    console.log(histogram);
+    }
+
+</script>
+</body>
+</html>

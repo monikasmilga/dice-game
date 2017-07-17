@@ -52,6 +52,17 @@
 
 <p id="ccc">...</p>
 
+<!--4. task-->
+
+<button id="ddd" onkeydown="changeHeight()" style="height: 150px; width: 150px; margin: 10px; background-color: lightyellow">
+</button>
+
+<button id="eee" onkeydown="changeWidth()" style="height: 150px; width: 150px; margin: 10px; background-color: lightsalmon">
+</button>
+
+<button id="fff" onkeydown="changeSize()" style="height: 150px; width: 150px; margin: 10px; background-color: lightseagreen">
+</button>
+
 <script>
 
     // 1. using events onclick, oncontextmenu, ondblclick to change div color
@@ -100,6 +111,23 @@
         document.getElementById("ccc").innerHTML = "You used mouse over";
     }
 
+
+    // 4. using keybord events onkeydown, onkeypress, onkeyup
+
+    function changeHeight() {
+        document.getElementById("ddd").style.height = "20px";
+    }
+
+    function changeWidth() {
+        document.getElementById("eee").style.width = "20px";
+
+    }
+
+    function changeSize(){
+        document.getElementById("fff").style.height = "20px";
+        document.getElementById("fff").style.width = "20px";
+
+    }
 
 </script>
 
