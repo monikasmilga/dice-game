@@ -19,6 +19,10 @@
 <p>Difference between 1 000 000 string and 1 000 000 integer, when 1 added</p>
 <p id="num"></p>
 
+<hr>
+
+<p id="nat"></p>
+
 
 <script>
     // enter numbers through input, count, return result
@@ -40,6 +44,17 @@
     document.getElementById('num').innerHTML = 'Number: ' + number + '<br>' + 'String: ' + stringNumber;
 
     //
+    function object(name, age, female) {
+        this.name = 'Monika',
+            this.age = 28,
+            this.female = true
+    }
+
+    var me = new object('Monce', 26, true);
+
+    object.prototype.nationality = "Lithuanian";
+    document.getElementById('nat').innerHTML = me.nationality + ' ' + me.name;
+
 
 </script>
 </body>
