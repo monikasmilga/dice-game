@@ -23,6 +23,14 @@
 
 <p id="nat"></p>
 
+<hr>
+
+<label>Insert number from 50 to 100: </label><br>
+<input type="number" id="number" value="">
+<button onclick="checkNumber()">Guess</button>
+
+<p id="answer"></p>
+
 
 <script>
     // enter numbers through input, count, return result
@@ -43,7 +51,8 @@
     var stringNumber = number.toString() + 1;
     document.getElementById('num').innerHTML = 'Number: ' + number + '<br>' + 'String: ' + stringNumber;
 
-    //
+    // using prototype to add an object property
+
     function object(name, age, female) {
         this.name = 'Monika',
             this.age = 28,
@@ -54,6 +63,20 @@
 
     object.prototype.nationality = "Lithuanian";
     document.getElementById('nat').innerHTML = me.nationality + ' ' + me.name;
+
+    // game, where you have to guess number from 50 to 100 in 5 tries
+
+    function checkNumber() {
+        var randomNumber = Math.floor((Math.random() * 51) + 50);
+        var guessNumber = document.getElementById('number').value;
+console.log(randomNumber)
+        if (randomNumber == guessNumber) {
+            return document.getElementById('answer').innerHTML = 'You won!'
+        }
+
+
+    }
+
 
 
 </script>
