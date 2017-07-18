@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Numbers</title>
+</head>
+<body>
+<label>Enter number 1</label>
+<input type="text" id="input1" value="" style="margin: 5px">
+<label>Enter number 2</label>
+<input type="text" id="input2" value="" style="margin: 5px">
+
+<button onclick="sumValues()">Addition</button>
+
+<p id="sum"></p>
+
+<hr>
+
+<p>Difference between 1 000 000 string and 1 000 000 integer, when 1 added</p>
+<p id="num"></p>
+
+
+<script>
+    // enter numbers through input, count, return result
+
+    function sumValues() {
+
+        var value1 = document.getElementById('input1').value,
+            value2 = document.getElementById('input2').value,
+            result;
+
+        result = Number(value1) + Number(value2);
+        return document.getElementById('sum').innerHTML = 'Result: ' + result;
+    }
+
+    // using toString()- Difference between 1 000 000 string and 1 000 000 integer, when 1 added
+
+    var number = 1000000 + 1;
+    var stringNumber = number.toString() + 1;
+    document.getElementById('num').innerHTML = 'Number: ' + number + '<br>' + 'String: ' + stringNumber;
+
+    //
+
+</script>
+</body>
+</html>

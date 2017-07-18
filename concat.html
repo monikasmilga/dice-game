@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Concat</title>
+</head>
+<body>
+
+<p id="concatText"></p>
+
+<div id="person"></div>
+
+<div id="splitNumber"></div>
+
+<div id="splitObject"></div>
+
+
+
+<script>
+    // connect three objects into string
+
+    var first = {text: 'Hello World'},
+        second = {text: 'Goodbye'},
+        space = {text: ' '};
+
+    document.getElementById("concatText").innerHTML = first.text.concat(space.text, second.text);
+
+    // concat text and image
+
+    var image1 = "<img src=\"http://wondersofdisney.disneyfansites.com/disfriends/alice/alice/aliceteacup.png\", style='height: 50px'>";
+
+    var text1 = 'Alice in Wonderland';
+    var person = {image: image1, text: text1};
+
+    var personImg = person.text.concat(" ", person.image);
+
+    document.getElementById("person").innerHTML = personImg;
+
+    // split variable which is a number (has to be changed toString first)
+
+    var number = 203,
+        number1;
+    number1 = number.toString().split('0');
+    document.getElementById("splitNumber").innerHTML =number1;
+
+    // split variable which is an object
+
+    var object = {
+            name: 'Lukas',
+            age: 45,
+            active: true
+        };
+    var object1 = object.split(':');
+    document.getElementById("splitObject").innerHTML =object1;
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
