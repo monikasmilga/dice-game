@@ -21,13 +21,14 @@
 
 <hr>
 
+
 <p id="nat"></p>
 
 <hr>
 
-<label>Insert number from 50 to 100: </label><br>
+<label>Insert number from 50 to 100: </label>
 <input type="number" id="number" value="">
-<button onclick="checkNumber()">Guess</button>
+<button onclick="checkGuesses()">Guess</button>
 
 <p id="answer"></p>
 
@@ -64,19 +65,48 @@
     object.prototype.nationality = "Lithuanian";
     document.getElementById('nat').innerHTML = me.nationality + ' ' + me.name;
 
+
     // game, where you have to guess number from 50 to 100 in 5 tries
 
-    function checkNumber() {
-        var randomNumber = Math.floor((Math.random() * 51) + 50);
-        var guessNumber = document.getElementById('number').value;
-console.log(randomNumber)
+
+    //    var guesses = 5;
+    //    var guessCount++;
+    //    function checkNumber() {
+    //        guessNumber = document.getElementById('number').value;
+    //
+    //        if (guessCount === 5) {
+    //            document.getElementById('answer').innerHTML = 'Game over!'
+    //        } else if (guessNumber === randomNumber) {
+    //            document.getElementById('answer').innerHTML = 'You won!'
+    //        }
+    //    }
+    //    console.log(guessCount)
+
+    var randomNumber = Math.floor((Math.random() * 51) + 50);
+    var guessCount = 1;
+    var guessNumber = document.getElementById('number').value;
+
+
+    function checkGuesses() {
+        guessNumber = document.getElementById('number').value;
+
+        console.log(randomNumber, guessNumber)
+
         if (randomNumber == guessNumber) {
-            return document.getElementById('answer').innerHTML = 'You won!'
+            document.getElementById('answer').innerHTML = 'You won!';
         }
 
+        else if (guessCount == 5) {
+            document.getElementById('answer').innerHTML = 'Game over';
+        }
+
+        else {
+            document.getElementById('answer').innerHTML = 'Guess again';
+        }
+
+        guessCount++;
 
     }
-
 
 
 </script>
