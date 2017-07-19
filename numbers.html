@@ -82,32 +82,25 @@
     //    }
     //    console.log(guessCount)
 
-    var randomNumber = Math.floor((Math.random() * 51) + 50);
-    var guessCount = 1;
-    var guessNumber = document.getElementById('number').value;
+    var randomNumber = Math.floor((Math.random() * 51) + 50),
+        guessCount = 1,
+        guessNumber = document.getElementById('number').value;
 
 
     function checkGuesses() {
         guessNumber = document.getElementById('number').value;
 
-        console.log(randomNumber, guessNumber)
-
         if (randomNumber == guessNumber) {
             document.getElementById('answer').innerHTML = 'You won!';
         }
-
         else if (guessCount == 5) {
             document.getElementById('answer').innerHTML = 'Game over';
         }
-
         else {
             document.getElementById('answer').innerHTML = 'Guess again';
         }
-
         guessCount++;
-
     }
-
 
 </script>
 </body>
